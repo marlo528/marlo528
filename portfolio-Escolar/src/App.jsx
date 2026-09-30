@@ -1,16 +1,16 @@
-import NavBar from "./components/NavBar"
-import "./App.css"
+import NavBar from "./components/NavBar/NavBar";
+import Luminaria from "./components/Luminaria/Luminaria";
+import "./App.css";
 function App() {
   return (
     <>
-
-    <div>
-      <NavBar></NavBar>
-      <h1>Meu portfólio</h1>
-    </div>
-     
+      <main className="site">
+        <NavBar />
+        <Luminaria />
+        <h1>meu portfólio</h1>
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,31 @@
+.navBar {
+  position: fixed;
+
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100; /*define a ordem de um elemento posicionamente em relação aos seu descendentes*/
+  gap: 30px;
+
+  button {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: white;
+    padding: 7px 18px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+}
+
+.navBar button:hover{
+    background: rgba(255,255,255,0.1);
+
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+}

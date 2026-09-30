@@ -1,9 +1,10 @@
-function Lampada() {
+import "./Luminaria.css"
+function Luminaria() {
   return (
     <div className="luminaria">
       <div className="fio"></div>
 
-      <div className="ArmaçãoLamp">
+      <div className="armacao-lampada">
         <div className="lampada"></div>
       </div>
       <div className="luz"></div>
@@ -11,4 +12,4 @@ function Lampada() {
   );
 }
 
-export default Lampada
+export default Luminaria
