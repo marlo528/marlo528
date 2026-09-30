@@ -5,7 +5,7 @@ function NavBar(){
         <button className="Logo">
             MN.
         </button>
-        <div className="NavLinks">
+        <div className="navLinks">
             <button>
                 portfólio SESI
             </button>
