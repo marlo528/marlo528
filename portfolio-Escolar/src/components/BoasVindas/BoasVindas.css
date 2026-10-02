@@ -1,0 +1,36 @@
+.boas-vindas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  padding-top: 120px;
+}
+
+.mensagem {
+  text-align: center;
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(35, 32, 42, 0.45);
+  backdrop-filter: blur(6px);
+  box-shadow:
+    rgba(0, 0, 0, 1) 0px 4px 2px,
+    rgba(0, 0, 0, 0.5) 0px 8px 4px,
+    rgba(0, 0, 0, 0.5) 0px 16px 8px,
+    rgba(0, 0, 0, 0.5) 0px 32px 16px,
+    rgba(0, 0, 0, 0.5) 0px 64px 32px;
+  z-index: 10;
+}
+
+.mensagem h1 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.mensagem p {
+  margin-top: 5px;
+
+  font-size: 0.9rem;
+
+  opacity: 0.8;
+}

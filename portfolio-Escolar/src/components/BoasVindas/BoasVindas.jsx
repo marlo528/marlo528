@@ -1,3 +1,4 @@
+import "./BoasVindas.css"
 function BoasVindas(){
     return(
         <section className="boas-vindas">

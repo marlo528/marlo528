@@ -2,6 +2,7 @@ import "./Luminaria.css"
 function Luminaria() {
   return (
     <div className="luminaria">
+      <div className="fio-curvado"></div>
       <div className="fio"></div>
 
       <div className="armacao-lampada">
