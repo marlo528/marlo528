@@ -1,7 +1,9 @@
 import "./Luminaria.css"
-function Luminaria() {
+function Luminaria({ scroll }) {
   return (
-    <div className="luminaria">
+    <div className="luminaria" style={{
+      transform: `translate(-50%, ${-scroll * 0.5}px)`
+    }}>
       <div className="fio-curvado"></div>
       <div className="fio"></div>
 

@@ -1,7 +1,9 @@
 import "./NavBar.css"
-function NavBar(){
+function NavBar({ scroll }){
     return(
-    <nav className="navBar">
+    <nav className="navBar" style={{
+        transform: `translate(-50%, ${-scroll * 0.5}px)`
+    }}>
 
         <button className="Logo">
             MN.

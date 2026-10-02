@@ -27,8 +27,8 @@ function App() {
   return (
     <>
       <main className="site">
-        <NavBar />
-        <Luminaria />
+        <NavBar scroll={scroll} />
+        <Luminaria scroll={scroll}/>
          <BoasVindas/>
          <PortFolio/>
       </main>
