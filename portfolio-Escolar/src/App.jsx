@@ -30,7 +30,7 @@ function App() {
         <NavBar scroll={scroll} />
         <Luminaria scroll={scroll}/>
          <BoasVindas/>
-         <PortFolio/>
+         <PortFolio scroll={scroll}/>
       </main>
     </>
   );
