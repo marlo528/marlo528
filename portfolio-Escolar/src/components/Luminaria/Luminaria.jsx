@@ -1,23 +1,30 @@
-import "./Luminaria.css"
+import "./Luminaria.css";
 function Luminaria({ scroll }) {
-  const intensidade = Math.min( 1 + scroll / 500, 2.5)
-
+  const intensidade = Math.min(1 + scroll / 500, 2.5);
+  const opacidade = Math.max(1 - scroll / 500, 0);
 
   return (
-    <div className="luminaria" style={{
-      transform: `translate(-50%, ${-scroll * 0.5}px)`
-    }}>
+    <div
+      className="luminaria"
+      style={{
+        transform: `translate(-50%, ${-scroll * 0.5}px)`,
+        opacity: opacidade,
+      }}
+    >
       <div className="fio-curvado"></div>
       <div className="fio"></div>
 
       <div className="armacao-lampada">
         <div className="lampada"></div>
       </div>
-      <div className="luz" style={{
-        transform: `scale(${intensidade}, ${1 + scroll / 700})`
-      }}></div>
+      <div
+        className="luz"
+        style={{
+          transform: `scale(${intensidade}, ${1 + scroll / 700})`,
+        }}
+      ></div>
     </div>
   );
 }
 
-export default Luminaria
+export default Luminaria;
