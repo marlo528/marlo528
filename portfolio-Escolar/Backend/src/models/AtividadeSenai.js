@@ -1,6 +1,7 @@
 import { DataTypes } from "sequelize";
 import Conn from "../config/Banco.js";
 
+
 const Senai = Conn.define("Senai", {
   id: {
     type: DataTypes.INTEGER,
@@ -28,5 +29,7 @@ const Senai = Conn.define("Senai", {
     allowNull: true
   },
 });
+
+
 
 export default Senai

@@ -2,7 +2,7 @@ import express from "express"
 import cors from "cors"
 
 import Conn from "./config/Banco.js"
-import Senai from "./models/AtividadeSenai.js"
+import { Senai, ArquivoSenai } from "./models/index.js"
 
 import senaiRotas from "./routes/SenaiRotas.js"
 
