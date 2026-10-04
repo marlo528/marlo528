@@ -12,7 +12,7 @@ const Senai = Conn.define("Senai", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  Materia: {
+  materia: {
     type: DataTypes.STRING,
     allowNull: false,
   },
