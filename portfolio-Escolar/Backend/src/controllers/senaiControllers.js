@@ -56,3 +56,41 @@ export const cadastrarAtividade = async (req, res) => {
     });
   }
 };
+export const atualizarAtividade = async (req, res) => {
+  try{
+    const { id } = req.params
+
+    const atividade = await Senai.findByPk(id)
+
+    if (!atividade){
+     return res.status(404).json({
+        menssage: `Atividade não encontrada`
+      })
+    }
+
+    const {
+      titulo,
+      materia,
+      descricao,
+      tecnologias
+    } = req.body
+
+    await atividade.update({
+      titulo,
+      materia,
+      descricao,
+      tecnologias
+    })
+
+    res.status(200).json({
+      message: `Atividade atualizada com sucesso`,
+      atividade
+    })
+  }catch(error){
+    console.error(error)
+
+    res.status(500).json({
+      message: "Erro ao atualizar atividade."
+    })
+  }
+}

@@ -1,6 +1,6 @@
 import express from "express"
 
-import { cadastrarAtividade, listarAtividades } from "../controllers/senaiControllers.js"
+import { atualizarAtividade, cadastrarAtividade, listarAtividades } from "../controllers/senaiControllers.js"
 import upload from "../config/upload.js"
 
 const router = express.Router()
@@ -13,4 +13,5 @@ router.post("/",
     ]),
     cadastrarAtividade
 )
+router.put("/:id", atualizarAtividade)
 export default router
