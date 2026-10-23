@@ -19,5 +19,20 @@ export const BimestreModels = Conn.define("Bimestre", {
     type: DataTypes.INTEGER,
     allowNull: true    
   },
+  fundamentos_teoricos:{
+    type: DataTypes.TEXT
+  },
   
+}
+,{
+    tableName: "Bimestre",
+    timestamps: true,
+    createdAt: "created_at",
+    updatedAt: "updated_at",
+    indexes:[
+        {
+            unique: true,
+            fields:["materia_id", "numero",]
+        }
+    ]
 });
