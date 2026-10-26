@@ -11,13 +11,14 @@ export const BimestreModels = Conn.define("Bimestre", {
   materia_id: {
     type: DataTypes.UUID,
     references: {
-      model: "materia_id",
+      model: MateriaModels,
       key: "id",
     },
   },
   numero:{
     type: DataTypes.INTEGER,
-    allowNull: true    
+    allowNull: false  
+
   },
   fundamentos_teoricos:{
     type: DataTypes.TEXT
