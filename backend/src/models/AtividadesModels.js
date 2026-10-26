@@ -19,7 +19,7 @@ export const AtividadesModels = Conn.define("Atividades", {
     bimestre_id:{
         type: DataTypes.UUID,
         references: {
-            model: bimestre_id,
+            model: BimestreModels,
             id: "id"
         }
     },
