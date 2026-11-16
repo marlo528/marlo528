@@ -28,14 +28,27 @@ export const UsuariosModels = Conn.define("Usuario", {
             isEmail:{
                 msg: `Insira um email válido.`
             },
+        },
+        notEmpty:{
+            msg: `O e-mail é obrigatório`
         }
     },
     senha:{
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
         validate:{
             notEmpty:{
                 msg: `A Senha não pode ser vazia.`
+            }
+        }
+    },
+    idade: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        validate: {
+            min:{
+                args: [1],
+                msg: `A idade deve ser maior que zero.`
             }
         }
     },
@@ -44,7 +57,7 @@ export const UsuariosModels = Conn.define("Usuario", {
         allowNull: false, 
         validate: {
             len:{
-                args: [0, 100],
+                args: [1, 100],
                 msg:`A turma é obrigátoria.`
             },
             notEmpty:{
@@ -55,10 +68,12 @@ export const UsuariosModels = Conn.define("Usuario", {
     },
     foto:{
         type: DataTypes.STRING,
-        defaultValue: ""
+        defaultValue: "",
+        allowNull: true
     },
     descricaoPessoal:{
         type: DataTypes.TEXT,
+        allowNull: true
     }
 },
 {

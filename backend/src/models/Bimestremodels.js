@@ -2,38 +2,50 @@ import { DataTypes, UUIDV4 } from "sequelize";
 import { Conn } from "../config/Conn.js";
 import { MateriaModels } from "./MateriaModels.js";
 
-export const BimestreModels = Conn.define("Bimestre", {
-  id: {
-    type: DataTypes.UUID,
-    defaultValue: UUIDV4,
-    primaryKey: true,
-  },
-  materia_id: {
-    type: DataTypes.UUID,
-    references: {
-      model: MateriaModels,
-      key: "id",
+export const BimestreModels = Conn.define(
+  "Bimestre",
+  {
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: UUIDV4,
+      primaryKey: true,
+    },
+    numero: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        min: {
+          args: [1],
+          msg: `O número do bimestres deve ser maior que zero.`,
+        },
+      },
+    },
+    fundamentos_teoricos: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
+    materia_id: {
+      type: DataTypes.UUID,
+      allowNull: false,
+      references: {
+        model: "MateriaModels",
+        key: "id",
+      },
+      onUpdate: `CASCADE`,
+      onDelete: `CASCADE`,
     },
   },
-  numero:{
-    type: DataTypes.INTEGER,
-    allowNull: false  
-
-  },
-  fundamentos_teoricos:{
-    type: DataTypes.TEXT
-  },
-  
-}
-,{
+  {
     tableName: "Bimestre",
     timestamps: true,
     createdAt: "created_at",
     updatedAt: "updated_at",
-    indexes:[
-        {
-            unique: true,
-            fields:["materia_id", "numero",]
-        }
-    ]
-});
+    indexes: [
+      {
+        name: `bimestre_materia_numero_unico`,
+        unique: true,
+        fields: ["materia_id", "numero"],
+      },
+    ],
+  },
+);

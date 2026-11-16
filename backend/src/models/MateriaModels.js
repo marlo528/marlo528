@@ -10,13 +10,16 @@ export const MateriaModels = Conn.define("Materias", {
     },
     usuario_id:{
         type: DataTypes.UUID,
-        references:{
-            model: UsuariosModels,
-            key: "id"
-        }
+       allowNull: false,
+       references: {
+        model: "UsuariosModels",
+        key: `id`
+       },
+       onUpdate: `CASCADE`,
+       onDelete: `CASCADE`
     },
     instituicao:{
-        type: DataTypes.ENUM("SESI", "SENAi"),
+        type: DataTypes.ENUM("SESI", "SENAI"),
         allowNull: true,
         validate:{
             isIn:{
@@ -39,16 +42,18 @@ export const MateriaModels = Conn.define("Materias", {
         }
     },
     conexoes_interdisciplinares:{
-        type: DataTypes.TEXT
+        type: DataTypes.TEXT,
+        allowNull: true
     }
     
 },{
-    tableName: "Materia",
+    tableName: "Materias",
     timestamps: true,
     createdAt: "created_at",
     updatedAt: "updated_at",
     indexes:[
         {
+            name: `materia_usuario_instituicao_nome_unico`,
             unique: true,
             fields:["usuario_id", "instituicao", "nome"]
         }
