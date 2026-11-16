@@ -1,5 +1,6 @@
 import { DataTypes, UUIDV4 } from "sequelize";
 import { Conn } from "../config/Conn.js";
+import { validarDataRealização } from "../utils/ValidarDataRealização.js";
 import { UsuariosModels } from "./UsuarioModels.js";
 import { BimestreModels } from "./Bimestremodels.js";
 import { MateriaModels } from "./MateriaModels.js";
@@ -35,6 +36,15 @@ export const AtividadesModels = Conn.define(
     data_realizacao: {
       type: DataTypes.DATEONLY,
       allowNull: true,
+      validate: {
+        dataValida(value){
+            if(!validarDataRealização(value)){
+                throw new Error(
+                    "A data de realização deve ser uma data válida no formato yyy-mm-dd."
+                )
+            }
+        }
+      }
     },
     imagem: {
       type: DataTypes.STRING,

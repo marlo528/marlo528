@@ -1,8 +1,6 @@
 
-import dotenv from "dotenv"
+import dotenv from "dotenv/config"
 import { Sequelize } from "sequelize";
-
-dotenv.config()
 
 // Configura a conexão com o banco MySQL.
 export const Conn = new Sequelize(
